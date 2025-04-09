@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPKB9ww4mYmLbB9VmPGY5lnAX/h5e1Tm8Wvg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100 font-sans">
+
+
+<section th:replace="~{/layout/header}"></section>
+<section th:replace="~{layout/sidebar}"></section>
+
+<section layout:fragment="main-content">
+    <div class="container mx-auto py-10 px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div th:each="product : ${products}" class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-500 hover:scale-102">
+                <div class="relative">
+                    <img th:src="@{${product.imageUrl}}" alt="Ảnh sản phẩm" class="w-full h-60 object-cover rounded-t-xl">
+                    <div class="absolute top-3 left-3 bg-green-400 text-white text-xs font-bold px-2 py-1 rounded">Mới</div>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2" th:text="${product.name}">Tên sản phẩm</h3>
+                    <p class="text-sm text-gray-700 mb-3" th:text="${product.description}">Mô tả sản phẩm...</p>
+                    <p class="text-lg font-bold text-red-600 mb-4" th:text="${#numbers.formatCurrency(product.price)}">Giá sản phẩm</p>
+                    <a th:href="@{/catalog/{id}(id=${product.id})}" class="inline-block bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition duration-300">
+                        <i class="fas fa-eye mr-2"></i> Xem chi tiết
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section th:replace="~{layout/footer}"></section>
+
+</body>
+</html>

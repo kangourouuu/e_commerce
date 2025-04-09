@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<!-- Header -->
+<section th:replace="~{layout/header :: header}"></section>
+
+<!-- Sidebar -->
+<section th:replace="~{layout/sidebar :: sidebar}"></section>
+
+<!-- Main Content -->
+<main>
+    <section layout:fragment="main-content"></section>
+</main>
+
+<!-- Các script JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

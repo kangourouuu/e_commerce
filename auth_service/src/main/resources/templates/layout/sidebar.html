@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <link rel="stylesheet" href="/css/admin.css">
+    <title></title>
+</head>
+<body>
+<!-- Sidebar -->
+<nav th:fragment="sidebar">
+    <div class="bg-light border-end" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light">
+            <i class="fas fa-shield-alt me-2"></i> Admin Panel
+        </div>
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 active" th:href="@{/admin}">
+                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" th:href="@{/customers/list-customer}">
+                <i class="fas fa-users me-2"></i> Quản lý Khách hàng
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" th:href="@{/products/list-product}">
+                <i class="fas fa-box-open me-2"></i> Quản lý Sản phẩm
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" th:href="@{/system/users/list}">
+                <i class="fas fa-user-cog me-2"></i> Quản lý Người dùng
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" th:href="@{/system/authorities/list}">
+                <i class="fas fa-key me-2"></i> Quản lý Quyền
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" th:href="@{/admin/orders/list-orders}">
+                <i class="fas fa-key me-2"></i> Quản lý Đơn hàng
+            </a>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

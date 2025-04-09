@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện Golmart Store</title>
+    <!--    <link rel="stylesheet" th:href="@{/static/css/home.css}">-->
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/da10f381f5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<section th:replace="~{layout/header}"></section>
+<section th:replace="~{layout/sidebar}"></section>
+
+<main>
+<section layout:fragment="main-content">
+    <div class="main-area">
+        <div class="left-content">
+            <div class="hero">
+                <h1>Spring Deals</h1>
+                <h1>Blooming Now !</h1>
+                <p class="special-sale">Special Sale starts today !</p>
+            </div>
+
+            <section class="promotions">
+                <div class="info">
+                    <h1 class="address">557 STONE LANE , READING</h1>
+                    <p>Lorem ipsum dolor sit amet , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . Quis ipsum suspendisse ultrices gravida .</p>
+                </div>
+
+                <div class="promotion-box discount">
+                    <p>DISC.</p>
+                    <p>50 %</p>
+                    <p>ALL</p>
+                    <p>ITEMS</p>
+                </div>
+
+                <div class="promotion-box bg">
+                    <p>BUY 1</p>
+                    <p>GET 1</p>
+                    <p>FOR</p>
+                    <p>SELECTED</p>
+                    <p>ITEMS</p>
+                </div>
+
+                <div class="promotion-box prizes">
+                    <p>GET</p>
+                    <p>THE</p>
+                    <p>GRAND</p>
+                    <p>PRIZES</p>
+                    <p>ITEMS</p>
+                </div>
+            </section>
+            <div class = "function-btn">
+                <a class="login-btn" th:href = "@{/login}">LOG IN</a>
+                <a class="signup-btn" th:href="@{/register}">SIGN UP</a>
+            </div>
+        </div>
+        <div class="right-image">
+            <img th:src="@{/assests/img/woman-shopping.jpg}" alt="Woman Shopping" class="image-section">
+        </div>
+    </div>
+</section>
+
+</main>
+
+<section th:replace="~{layout/footer}"></section>
+</body>
+</html>

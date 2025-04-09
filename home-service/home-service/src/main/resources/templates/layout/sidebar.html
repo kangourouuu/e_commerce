@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <title></title>
+</head>
+<body>
+<!-- Sidebar Fragment -->
+<nav th:fragment="sidebar" class="sidebar">
+    <ul>
+        <li>
+            <a th:href="@{/}">HOME</a>
+        </li>
+        <li>
+            <a th:href="@{/contact}">CONTACT</a>
+        </li>
+        <li>
+            <a th:href="@{/catalog}">CATALOG</a>
+        </li>
+        <li>
+            <a th:href="@{/testimonials}">TESTIMONIALS</a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách sản phẩm</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPKB9ww4mYmLbB9VmPGY5lnAX/h5e1Tm8Wvg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Basic CSS for product listing */
+    .product-list-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-image-container {
+      position: relative;
+      width: 100%;
+      height: 200px; /* Adjust as needed */
+      overflow: hidden;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .product-description {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 10px;
+      height: 50px; /* Adjust height as needed to limit description length */
+      overflow: hidden;
+    }
+
+    .product-price {
+      color: #e44d26; /* Example price color */
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .add-to-cart-btn {
+      background-color: #5cb85c; /* Example button color */
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #4cae4c;
+    }
+
+    .add-to-cart-btn i {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="product-list-container">
+  <h2>Danh sách sản phẩm</h2>
+  <div class="product-grid">
+    <div class="product-card" th:each="product : ${product}">
+      <div class="product-image-container">
+        <img th:src="${product.imageUrl}" alt="Product Image" class="product-image">
+      </div>
+      <div class="product-info">
+        <h3 class="product-name" th:text="${product.name}">Tên sản phẩm</h3>
+        <p class="product-description" th:text="${product.description}">Mô tả sản phẩm</p>
+        <p class="product-price" th:text="${#numbers.formatCurrency(product.price)}">Giá sản phẩm</p>
+        <button class="add-to-cart-btn">
+          <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

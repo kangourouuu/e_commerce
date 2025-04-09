@@ -1,0 +1,574 @@
+/* Reset margin, padding, and box sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*font-family: 'Arial', sans-serif;*/
+    background-color: #fbf4e9; /* Light background color */
+    color: #fbf4e9;
+    line-height: 1.6;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fbf4e9; /* Blue color for the header */
+    padding: 20px;
+    color: #272727;
+    margin-left: 30px;
+    width: 1500px;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo img {
+    margin-right: 10px;
+    width: 140px;
+}
+
+header .logo span {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+header .search-bar {
+    width: 400px;
+    height: 45px;
+    border-radius: 38px;
+    background-color: #ebd3ac;
+}
+
+.search-bar_magnifier {
+    width: 20px;
+    height: 20px;
+    margin-top: 12px;
+    margin-left: 20px;
+}
+
+header .search-bar input {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+header .search-bar button {
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header .search-bar button:hover {
+    background-color: #e67e00;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 180px;
+    background-color: #fbf4e9;
+    color: #272727;
+    height: 100vh;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    padding-top: 80px; /* Adjust based on header height */
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+    height: 36px;
+    padding-left: 50px;
+}
+
+.sidebar .active {
+    background-color: #d7e7b2;
+}
+
+.sidebar li a {
+    color: #272727;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.sidebar li:hover {
+    background-color: #d7e7b2;
+}
+
+/* Main content styling */
+main {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.main-content {
+    margin-top: 80px; /* Tránh header */
+    padding: 20px;
+    max-width: 1200px; /* Hoặc kích thước phù hợp */
+    margin-right: auto;
+    margin-left: auto; /* Căn giữa khối */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều ngang */
+    text-align: center; /* Căn giữa nội dung text */
+}
+
+.main-area {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr; /* Chia thành hai cột, cột bên trái rộng hơn */
+    gap: 18px; /* Khoảng cách giữa hai cột */
+    align-items: start; /* Căn các phần tử lên trên */
+    height: 700px;
+}
+
+.left-content {
+    width: 740px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Khoảng cách giữa các phần tử bên trái */
+}
+
+.hero h1 {
+    width: 700px;
+    font-size: 70px;
+    line-height: 111px;
+    color: #2e2e2e;
+    font-weight: 400;
+    font-family: "Architects Daughter", serif;
+    text-align: right;
+}
+
+.special-sale {
+    width: 700px;
+    height: 70px;
+    font-size: 40px;
+    line-height: 67px;
+    color: #272727;
+    font-weight: 400;
+    font-family: "Poppins";
+    text-align: right;
+}
+
+/* Promotions section */
+.promotions {
+    display: flex;
+    height: 250px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.promotion-box p {
+    /*flex-direction: column;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #272727;
+}
+
+.promotion-box.discount {
+    margin-top: 22px;
+    margin-left: 4px;
+    height: 200px;
+    width: 120px;
+    border-radius: 24px;
+    background-color: #afbf82;
+}
+
+.promotion-box.bg {
+    margin-top: 22px;
+    margin-left: 4px;
+    height: 200px;
+    width: 120px;
+    border-radius: 24px;
+    background-color: #e08080;
+}
+
+.promotion-box.prizes {
+    margin-top: 22px;
+    margin-left: 4px;
+    height: 200px;
+    width: 120px;
+    border-radius: 24px;
+    background-color: #d7b465;
+}
+
+.right-image {
+    margin-left: 8px;
+}
+
+/* Image section */
+.image-section {
+    margin-left: 28px;
+    width: 460px;
+    height: 660px;
+    border-radius: 63px;
+    background-color: #bbb4aa;
+}
+
+.image-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Button section */
+.function-btn {
+    display: flex;
+    margin-top: 40px;
+}
+
+.signup-btn {
+    width: 180px;
+    height: 70px;
+    border-radius: 32px;
+    margin-left: 30px;
+    background-color: #fbf4e9;
+    border: 3px solid #e08080;
+    font-size: 1em;
+    font-weight: bold;
+    color: #2e2e2e;
+    text-decoration: none;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn {
+    width: 180px;
+    height: 70px;
+    border-radius: 32px;
+    background-color: #e08080;
+    border-color: #e08080;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fbf4e9;
+    text-decoration: none;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button:hover {
+    background-color: #0099cc;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.address {
+    width: 330px;
+    font-size: 24px;
+    line-height: 49px;
+    text-transform: uppercase;
+    color: #272727;
+    font-weight: 700;
+    text-align: left;
+    font-family: "Poppins", serif;
+}
+
+.info p {
+    /*display: flex-wrapper;*/
+    width: 400px;
+    height: 220px;
+    font-size: 16px;
+    line-height: 48px;
+    color: #272727;
+    font-weight: 400;
+    font-family: "Poppins", serif;
+}
+/* ===== Contact Page Styles ===== */
+.u-section-1 {
+    background-color: #fbf4e9;
+    padding: 80px 0;
+    color: #272727;
+}
+
+.u-container-align-center {
+    text-align: center;
+}
+
+.u-text-1 {
+    font-family: "Abril Fatface", serif;
+    font-size: 3rem;
+    color: #272727;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+/* Contact Info Cards */
+.u-layout-cell {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin: 15px;
+}
+
+.u-layout-cell:hover {
+    transform: translateY(-10px);
+}
+
+/* Icons */
+.u-icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #e08080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.u-icon-circle svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+/* Text Styles */
+.u-text-2, .u-text-4, .u-text-6 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color: #272727;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.u-text-3, .u-text-5, .u-text-7 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Grid Layout */
+.u-layout-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.u-layout-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.u-size-20 {
+    flex: 0 0 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .u-size-20 {
+        flex: 0 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .u-size-20 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .u-text-1 {
+        font-size: 2rem;
+    }
+}
+
+/* Footer */
+.u-footer {
+    background-color: #272727;
+    color: #fbf4e9;
+    padding: 30px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===== Testimonials Page Styles ===== */
+.u-section-1 {
+    background-color: #fbf4e9;
+    padding: 80px 0;
+    color: #272727;
+}
+
+.u-text-1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e08080;
+    margin-bottom: 15px;
+}
+
+.u-text-2 {
+    font-family: "Abril Fatface", serif;
+    font-size: 2.5rem;
+    color: #272727;
+    margin-bottom: 20px;
+}
+
+.u-text-3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+/* Testimonial Cards */
+.u-list-1 {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.u-repeater-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.u-list-item {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.u-list-item:hover {
+    transform: translateY(-10px);
+}
+
+/* User Avatar */
+.u-image-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Testimonial Text */
+.u-text-grey-70 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px 0;
+}
+
+.u-text-grey-70:before,
+.u-text-grey-70:after {
+    content: '"';
+    font-family: "Abril Fatface", serif;
+    font-size: 3rem;
+    color: #e08080;
+    opacity: 0.3;
+    position: absolute;
+}
+
+.u-text-grey-70:before {
+    top: -10px;
+    left: -15px;
+}
+
+.u-text-grey-70:after {
+    bottom: -30px;
+    right: -15px;
+}
+
+/* User Info */
+.u-text-palette-2-base {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    color: #272727;
+    margin-bottom: 5px;
+}
+
+.u-text-default {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #e08080;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Quote Icons */
+.u-icon {
+    display: inline-block;
+    color: #e08080;
+    font-size: 1.2rem;
+    margin: 0 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .u-list-item {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .u-list-item {
+        flex: 1 1 100%;
+    }
+
+    .u-text-2 {
+        font-size: 2rem;
+    }
+}
+
+/* Footer */
+.u-footer {
+    background-color: #272727;
+    color: #fbf4e9;
+    padding: 30px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    margin-left : 160px;
+    margin-top : 80px;
+}

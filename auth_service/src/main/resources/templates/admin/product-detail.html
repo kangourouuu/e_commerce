@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+<div class="container mx-auto py-10 px-4 max-w-4xl">
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Hình ảnh sản phẩm -->
+            <div>
+                <img th:if="${product.imageUrl}" th:src="@{${product.imageUrl}}" alt="Ảnh sản phẩm"
+                     class="rounded-lg w-full h-80 object-cover shadow">
+            </div>
+
+            <!-- Thông tin chi tiết sản phẩm -->
+            <div>
+                <h1 class="text-3xl font-bold text-blue-600 mb-4" th:text="${product.name}">Tên sản phẩm</h1>
+                <p class="text-xl text-green-600 font-semibold mb-2"
+                   th:text="${#numbers.formatCurrency(product.price)}">Giá</p>
+                <p class="text-gray-700 leading-relaxed mb-4" th:text="${product.description}">Mô tả sản phẩm...</p>
+
+                <div class="mt-6">
+                    <a href="/products"
+                       class="inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-lg mr-2">
+                        ⬅ Quay lại
+                    </a>
+
+                    <a th:href="@{'/cart/add/' + ${product.id}}"
+                       class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg shadow">
+                        🚀 Thêm vào giỏ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
